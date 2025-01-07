@@ -1,0 +1,19 @@
+#-------------------------------------------------------------------------------
+# Project: service-b
+#-------------------------------------------------------------------------------
+
+[project]
+
+name = "service-b"
+version = "1.0.0"
+description = "Hello World REST endpoint service"
+requires-python = ">=3.12"
+
+dependencies = [
+    "fastapi[standard]>=0.115.6",
+    "package-b",
+]
+
+[tool.uv.sources]
+
+package-b = { workspace = true }

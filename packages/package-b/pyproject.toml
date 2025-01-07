@@ -1,0 +1,26 @@
+#-------------------------------------------------------------------------------
+# Project: package-b
+#-------------------------------------------------------------------------------
+
+[project]
+
+name = "package-b"
+version = "0.1.0"
+description = "Simple hello world package."
+
+authors = [
+    { name = "Andrew Young", email = "joven@alum.wpi.edu" }
+]
+
+requires-python = ">=3.12"
+
+dependencies = []
+
+#-------------------------------------------------------------------------------
+# Build System
+#-------------------------------------------------------------------------------
+
+[build-system]
+
+requires = ["hatchling"]
+build-backend = "hatchling.build"

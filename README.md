@@ -50,7 +50,7 @@ packages/
 npm install
 
 # Launch local dev env
-npm dev
+npm run dev
 ```
 
 

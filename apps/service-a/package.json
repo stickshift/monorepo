@@ -1,0 +1,20 @@
+{
+    "name": "service-a",
+    "version": "1.0.0",
+    "description": "Hello World REST endpoint service", 
+    
+    "main": "dist/index.js",
+
+    "scripts": {
+        "build": "tsc",
+        "start": "node dist/index.js",
+        "dev": "ts-node-dev --respawn src/index.ts",
+        "test": "jest",
+        "clean": "rm -rf dist"
+    },
+    
+    "dependencies": {
+        "express": "^4.18.2",
+        "package-a": "^1.0.0"
+    }
+}

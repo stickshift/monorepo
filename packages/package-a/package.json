@@ -1,0 +1,13 @@
+{
+    "name": "package-a",
+    "version": "1.0.0",
+    "description": "Simple hello world package",
+
+    "main": "dist/index.js",
+    "types": "dist/index.d.ts",
+
+    "scripts": {
+        "build": "tsc",
+        "clean": "rm -rf dist"
+    }
+}

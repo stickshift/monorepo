@@ -1,0 +1,27 @@
+name: Build and Test Feature Branches
+on:
+  pull_request:
+    branches:
+      - main
+jobs:
+  setup:
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Setup bun
+        uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: "1.1.43"
+
+      - name: Setup uv
+        uses: astral-sh/setup-uv@v3
+        with:
+          version: "0.5.2"
+
+      - name: Install Dependencies
+        run: bun install:all
+
+      - name: Check Code
+        run: bun check

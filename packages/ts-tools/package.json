@@ -1,0 +1,14 @@
+{
+    "name": "ts-tools",
+
+    "scripts": {
+    },
+    
+    "exports": {
+      ".": "./src/index.ts"
+    },
+    
+    "dependencies": {
+    }
+  }
+  

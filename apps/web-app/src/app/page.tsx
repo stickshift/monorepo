@@ -8,8 +8,8 @@ export default async function Page() {
     <main>
       <h1>Random Strings</h1>
       <ul>
-        <li>ts-tools: {randomString()}</li>
-        <li>py-tools: {data}</li>
+        <li>Generated in TypeScript (ts-tools): {randomString()}</li>
+        <li>Generated in Python (py-tools): {data}</li>
       </ul>
     </main>
   );

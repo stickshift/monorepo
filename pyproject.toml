@@ -13,6 +13,13 @@ dependencies = [
     "service",
 ]
 
+[dependency-groups]
+
+dev = [
+    "mypy>=1.14.1",
+    "ruff>=0.9.0",
+]
+
 #-------------------------------------------------------------------------------
 # Workspaces
 #-------------------------------------------------------------------------------
@@ -24,9 +31,3 @@ members = ["packages/py-tools", "apps/service"]
 [tool.uv.sources]
 
 service = { workspace = true }
-
-[dependency-groups]
-dev = [
-    "mypy>=1.14.1",
-    "ruff>=0.9.0",
-]

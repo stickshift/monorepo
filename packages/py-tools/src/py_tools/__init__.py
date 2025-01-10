@@ -5,6 +5,9 @@ __all__ = [
 ]
 
 
-def random_string() -> str:
+def random_string(length: int | None = None) -> str:
     """Generate random string."""
-    return secrets.token_hex()
+    # Defaults
+    length = length if length is not None else 8
+
+    return secrets.token_hex(nbytes=length // 2).upper()

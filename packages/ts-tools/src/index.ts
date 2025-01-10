@@ -1,6 +1,5 @@
 export function randomString(length: number = 8): string {
-  const chars =
-    "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+  const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
   let result = "";
 
   for (let i = 0; i < length; i++) {

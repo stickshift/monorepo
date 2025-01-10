@@ -43,6 +43,12 @@ bun install:all
 # Launch development servers
 bun dev
 
-# Reset
+# Check code
+bun check
+
+# Fix code
+bun fix
+
+# Reset everything
 bun clean
 ```

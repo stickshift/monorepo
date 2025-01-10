@@ -5,27 +5,8 @@
 [project]
 
 name = "monorepo"
-version = "1.0.0"
-description = "Demo monorepo build system"
+version = "0.1.0"
 readme = "README.md"
 requires-python = ">=3.12"
 
-dependencies = [
-    "package-b",
-    "service-b",
-]
-
-#-------------------------------------------------------------------------------
-# Workspace
-#-------------------------------------------------------------------------------
-
-[tool.uv.workspace]
-
-members = [
-    "apps/service-b", "packages/package-b",
-]
-
-[tool.uv.sources]
-
-package-b = { workspace = true }
-service-b = { workspace = true }
+dependencies = []

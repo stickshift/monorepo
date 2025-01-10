@@ -1,0 +1,15 @@
+{
+    "name": "web-app",
+    "private": true,
+
+    "scripts": {
+        "dev": "bunx --bun next dev",
+        "clean": "rm -rf .next"
+    },
+
+    "dependencies": {
+        "next": "^15.1.4",
+        "react": "^19.0.0",
+        "react-dom": "^19.0.0"
+    }
+}

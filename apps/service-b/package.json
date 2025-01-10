@@ -1,9 +1,0 @@
-{
-    "name": "service-b",
-
-    "scripts": {
-        "build": "uv build",
-        "dev": "uv run fastapi dev src/endpoint.py",
-        "clean": "rm -rf dist"
-    }
-}

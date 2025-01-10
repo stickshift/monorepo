@@ -15,3 +15,4 @@ wheels/
 node_modules/
 .next/
 .turbo/
+tsconfig.tsbuildinfo

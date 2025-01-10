@@ -1,0 +1,9 @@
+{
+    "name": "service",
+    "private": true,
+
+    "scripts": {
+        "dev": "uv run fastapi dev src/main.py",
+        "clean": "echo ok"
+    }
+}

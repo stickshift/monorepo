@@ -1,0 +1,18 @@
+#-------------------------------------------------------------------------------
+# Project: service
+#-------------------------------------------------------------------------------
+
+[project]
+
+name = "service"
+version = "0.1.0"
+requires-python = ">=3.12"
+
+dependencies = [
+    "fastapi[standard]>=0.115.6",
+    "py-tools",
+]
+
+[tool.uv.sources]
+
+py-tools = { workspace = true }

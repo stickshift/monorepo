@@ -1,21 +1,19 @@
 #-------------------------------------------------------------------------------
-# Project: monorepo
+# Project: py-tools
 #-------------------------------------------------------------------------------
 
 [project]
 
-name = "monorepo"
+name = "py-tools"
 version = "0.1.0"
-readme = "README.md"
 requires-python = ">=3.12"
-
-dependencies = [
-]
+dependencies = []
 
 #-------------------------------------------------------------------------------
-# Workspaces
+# Build System
 #-------------------------------------------------------------------------------
 
-[tool.uv.workspace]
+[build-system]
 
-members = ["packages/py-tools", "apps/service"]
+requires = ["hatchling"]
+build-backend = "hatchling.build"

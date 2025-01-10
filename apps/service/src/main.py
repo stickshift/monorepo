@@ -1,3 +1,5 @@
+"""REST Endpoint."""
+
 from fastapi import FastAPI
 
 import py_tools
@@ -6,5 +8,6 @@ app = FastAPI()
 
 
 @app.get("/")
-def read_root():
-    return {"Hello": py_tools.random_string()}
+def index():
+    """Index entrypoint."""
+    return py_tools.random_string()

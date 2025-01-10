@@ -10,18 +10,28 @@
     "scripts": {
         "install:ts": "bun install",
         "install:py": "uv sync",
-        "install:all": "bun run install:ts; bun run install:py",
-        "dev": "turbo run dev",
-        "clean:projects": "turbo run clean",
+        "install:all": "bun install:ts; bun install:py",
+        "dev": "turbo dev",
+        "format:check": "turbo format:check",
+        "format:fix": "turbo format:fix",
+        "lint:check": "turbo lint:check",
+        "lint:fix": "turbo lint:fix",
+        "check": "bun format:check lint:check",
+        "fix": "bun format:fix lint:fix",
+        "clean:projects": "turbo clean",
         "clean:root": "rm -rf node_modules .venv",
-        "clean": "bun run clean:projects && bun run clean:root"
+        "clean:turbo": "find . -type d -name .turbo -exec rm -rf {} +",
+        "clean": "bun clean:projects && bun clean:root && bun clean:turbo"
     },
     "dependencies": {},
     "devDependencies": {
         "@types/bun": "^1.1.16",
         "@types/react": "^19.0.4",
         "concurrently": "^9.1.2",
+        "eslint": "^9.17.0",
+        "prettier": "^3.4.2",
         "turbo": "^2.3.3",
-        "typescript": "^5.7.3"
+        "typescript": "^5.7.3",
+        "typescript-eslint": "^8.19.1"
     }
 }

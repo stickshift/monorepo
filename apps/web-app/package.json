@@ -1,0 +1,22 @@
+{
+    "name": "web-app",
+    "private": true,
+
+    "scripts": {
+        "type:check": "tsc --noEmit",
+        "format:check": "prettier --check \"**/*.{js,jsx,ts,tsx}\"",
+        "format:fix": "prettier --write \"**/*.{js,jsx,ts,tsx}\"",
+        "lint:check": "eslint src",
+        "lint:fix": "eslint --fix src",
+        "dev": "bunx --bun next dev",
+        "clean": "rm -rf .next tsconfig.tsbuildinfo"
+    },
+
+    "dependencies": {
+        "next": "^15.1.4",
+        "react": "^19.0.0",
+        "react-dom": "^19.0.0",
+
+        "ts-tools": "workspace:*"
+    }
+}

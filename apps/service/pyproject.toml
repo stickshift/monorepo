@@ -1,33 +1,27 @@
 #-------------------------------------------------------------------------------
-# Project: monorepo
+# Project: service
 #-------------------------------------------------------------------------------
 
 [project]
 
-name = "monorepo"
+name = "service"
 version = "0.1.0"
-readme = "README.md"
 requires-python = ">=3.12"
 
 dependencies = [
-    "service",
+    "fastapi[standard]>=0.115.6",
+    "py-tools",
 ]
-
-[dependency-groups]
-
-dev = [
-    "mypy>=1.14.1",
-    "ruff>=0.9.0",
-]
-
-#-------------------------------------------------------------------------------
-# Workspaces
-#-------------------------------------------------------------------------------
-
-[tool.uv.workspace]
-
-members = ["packages/py-tools", "apps/service"]
 
 [tool.uv.sources]
 
-service = { workspace = true }
+py-tools = { workspace = true }
+
+#-------------------------------------------------------------------------------
+# Tools
+#-------------------------------------------------------------------------------
+
+[tool.mypy]
+
+strict = true
+files = "**/*.py"

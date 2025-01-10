@@ -1,19 +1,12 @@
 #-------------------------------------------------------------------------------
-# Project: package-b
+# Project: py-tools
 #-------------------------------------------------------------------------------
 
 [project]
 
-name = "package-b"
+name = "py-tools"
 version = "0.1.0"
-description = "Simple hello world package."
-
-authors = [
-    { name = "Andrew Young", email = "joven@alum.wpi.edu" }
-]
-
 requires-python = ">=3.12"
-
 dependencies = []
 
 #-------------------------------------------------------------------------------
@@ -24,3 +17,12 @@ dependencies = []
 
 requires = ["hatchling"]
 build-backend = "hatchling.build"
+
+#-------------------------------------------------------------------------------
+# Tools
+#-------------------------------------------------------------------------------
+
+[tool.mypy]
+
+strict = true
+files = "**/*.py"

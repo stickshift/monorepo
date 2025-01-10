@@ -1,0 +1,14 @@
+{
+    "name": "service",
+    "private": true,
+
+    "scripts": {
+        "type:check": "uv run mypy",
+        "format:check": "uv run ruff format --preview --check",
+        "format:fix": "uv run ruff format --preview",
+        "lint:check": "uv run ruff check --preview",
+        "lint:fix": "uv run ruff check --preview --fix",
+        "dev": "uv run fastapi dev src/main.py",
+        "clean": "rm -rf .mypy_cache .ruff_cache"
+    }
+}

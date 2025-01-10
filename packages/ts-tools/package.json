@@ -1,0 +1,20 @@
+{
+    "name": "ts-tools",
+
+    "scripts": {
+      "type:check": "tsc --noEmit",
+      "format:check": "prettier --check \"**/*.{js,jsx,ts,tsx}\"",
+      "format:fix": "prettier --write \"**/*.{js,jsx,ts,tsx}\"",
+      "lint:check": "eslint src",
+      "lint:fix": "eslint --fix src",
+      "clean": "rm -rf tsconfig.tsbuildinfo"
+    },
+    
+    "exports": {
+      ".": "./src/index.ts"
+    },
+    
+    "dependencies": {
+    }
+  }
+  

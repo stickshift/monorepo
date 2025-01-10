@@ -12,3 +12,4 @@ wheels/
 # JavaScript-generated files
 node_modules/
 .next/
+.turbo/

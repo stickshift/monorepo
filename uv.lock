@@ -269,6 +269,12 @@ wheels = [
 name = "monorepo"
 version = "0.1.0"
 source = { virtual = "." }
+dependencies = [
+    { name = "service" },
+]
+
+[package.metadata]
+requires-dist = [{ name = "service", virtual = "apps/service" }]
 
 [[package]]
 name = "py-tools"

@@ -1,0 +1,13 @@
+{
+    "$schema": "https://turbo.build/schema.json",
+    "tasks": {
+      "clean": {
+        "dependsOn": ["^clean"],
+        "cache": false
+      }, 
+      "dev": {
+        "cache": false,
+        "persistent": true
+      }
+    }
+  }

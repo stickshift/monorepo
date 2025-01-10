@@ -31,7 +31,11 @@ The goal is to demonstrate building a monorepo with a mixture of TypeScript and 
 
 ```
 apps/
+  service/  # Python rest endpoint
+  web-app/  # TypeScript web-app
 packages/
+  py-tools/ # Python package
+  ts-tools/ # Typescript package
 ```
 
 ## Workflow
@@ -51,4 +55,28 @@ bun fix
 
 # Reset everything
 bun clean
+```
+
+## Demo
+
+### Launch
+
+```shell
+# Install dependencies
+bun install:all
+
+# Check code
+bun check
+
+# Launch dev servers
+bun dev
+
+# Open web-app
+open http://localhost:3000/
+```
+
+### Fix bug
+```python
+from fastapi.responses import PlainTextResponse
+@app.get("/", response_class=PlainTextResponse)
 ```

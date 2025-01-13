@@ -8,6 +8,7 @@
         "format:fix": "uv run ruff format --preview",
         "lint:check": "uv run ruff check --preview",
         "lint:fix": "uv run ruff check --preview --fix",
+        "test": "uv run pytest tests",
         "clean": "rm -rf .mypy_cache .ruff_cache"
     }
 }

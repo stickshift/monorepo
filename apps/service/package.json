@@ -8,7 +8,8 @@
         "format:fix": "uv run ruff format --preview",
         "lint:check": "uv run ruff check --preview",
         "lint:fix": "uv run ruff check --preview --fix",
-        "dev": "uv run fastapi dev src/main.py",
+        "test": "uv run pytest tests",
+        "dev": "uv run fastapi dev src/service/endpoint.py",
         "clean": "rm -rf .mypy_cache .ruff_cache"
     }
 }

@@ -1,10 +1,11 @@
-name: Build and Test Feature Branches
+name: Build and Test PRs
 on:
   pull_request:
     branches:
       - main
 jobs:
-  setup:
+  build:
+    name: Build and Test
     runs-on: ubuntu-24.04
     steps:
       - name: Checkout
@@ -24,4 +25,7 @@ jobs:
         run: bun install:all
 
       - name: Check Code
-        run: bun check
+        run: bun run check
+
+      - name: Test Code
+        run: bun run test

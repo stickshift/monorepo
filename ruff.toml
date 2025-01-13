@@ -127,7 +127,7 @@ mark-parentheses = false
 ]
 
 # Test ignores
-"tests/**/*" = [
+"**/tests/**/*" = [
   "ARG001",  # unused arguments
   "D",  # docstrings
   "F811",  # redefined-while-unused

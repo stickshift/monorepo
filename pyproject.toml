@@ -5,31 +5,23 @@
 [project]
 
 name = "monorepo"
-version = "0.1.0"
-readme = "README.md"
+version = "0.0.0"
 requires-python = ">=3.12"
 
 dependencies = [
-    "service",
-]
-
-[dependency-groups]
-dev = [
-    "mypy>=1.14.1",
-    "pytest-asyncio>=0.25.2",
-    "pytest>=8.3.4",
-    "pytest-xdist>=3.6.1",
-    "ruff>=0.9.0",
+    "foundation",
 ]
 
 #-------------------------------------------------------------------------------
-# Workspaces
+# UV
 #-------------------------------------------------------------------------------
 
 [tool.uv.workspace]
 
-members = ["packages/py-tools", "apps/service"]
+members = [
+    "apps/foundation",
+]
 
 [tool.uv.sources]
 
-service = { workspace = true }
+foundation = { workspace = true }

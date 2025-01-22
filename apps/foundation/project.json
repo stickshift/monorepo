@@ -1,0 +1,33 @@
+{
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "name": "foundation",
+  "projectType": "application",
+  "sourceRoot": "apps/foundation",
+  "targets": {
+
+    "up": {
+      "executor": "nx:run-commands",
+      "options": {
+        "cwd": "apps/foundation",
+        "commands": [
+          "uv run pulumi stack select dev --create",
+          "uv run pulumi up --yes"
+        ],
+        "parallel": false
+      }
+    },
+
+    "down": {
+      "executor": "nx:run-commands",
+      "options": {
+        "cwd": "apps/foundation",
+        "commands": [
+          "uv run pulumi down --yes",
+          "uv run pulumi stack unselect"
+        ],
+        "parallel": false
+      }
+    }
+  },
+  "tags": []
+} 

@@ -1,21 +1,17 @@
 #-------------------------------------------------------------------------------
-# Project: service
+# Project: foundation
 #-------------------------------------------------------------------------------
 
 [project]
 
-name = "service"
-version = "0.1.0"
+name = "foundation"
+version = "0.0.0"
 requires-python = ">=3.12"
 
 dependencies = [
-    "fastapi[standard]>=0.115.6",
-    "py-tools",
+    "pulumi>=3.147.0,<4.0.0",
+    "pulumi-command>=1.0.1",
 ]
-
-[tool.uv.sources]
-
-py-tools = { workspace = true }
 
 #-------------------------------------------------------------------------------
 # Build System
@@ -25,12 +21,3 @@ py-tools = { workspace = true }
 
 requires = ["hatchling"]
 build-backend = "hatchling.build"
-
-#-------------------------------------------------------------------------------
-# Tools
-#-------------------------------------------------------------------------------
-
-[tool.mypy]
-
-strict = true
-files = "src/**/*.py,tests/**/*.py"

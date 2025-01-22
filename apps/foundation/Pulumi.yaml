@@ -1,0 +1,6 @@
+name: foundation
+runtime: python
+config:
+  pulumi:tags:
+    value:
+      pulumi:template: python

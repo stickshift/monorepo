@@ -1,82 +1,55 @@
 # Monorepo
 
-Demo build system that blends modern TypeScript and Python tools into a single, streamlined monorepo toolchain.
+Demo repo that blends TypeScript, Python, Containers, and Kubernetes into a single, streamlined monorepo toolchain.
 
 ## Prerequisites
 
 Monorepo uses [asdf](https://asdf-vm.com/) to manage a short list of top level tools in `~/.asdf`.
 
-* Bun
-* Python
-* UV
-
 Use the following steps to configure a new development machine.
 
 ```shell
-# Install asdf
-brew install asdf
-
-# Install asdf plugins
-asdf plugin add bun
-asdf plugin add python
-asdf plugin add uv
-
 # Install tools
+brew install asdf
+plugins=(nodejs python pulumi kind kubectl helm)
+for p in $plugins;do asdf plugin add $p;done
 asdf install
 ```
 
 ## Components
 
-The goal is to demonstrate building a monorepo with a mixture of TypeScript and Python components.
+Monorepo includes a web app, an api, and a series of containerized components all deployed in Kubernetes.
 
 ```
 apps/
-  service/  # Python rest endpoint
-  web-app/  # TypeScript web-app
+  # Kubernetes cluster w/ supporting components
+  platform/  
+  
+  # Backend API (Python)
+  api/
+
+  # Frontend Web App (TypeScript)
+  web-app/
+
 packages/
-  py-tools/ # Python package
-  ts-tools/ # Typescript package
+  ...
 ```
 
 ## Workflow
 
 ```shell
 # Install dependencies
-bun install:all
+npm install
 
 # Launch development servers
-bun dev
+npm run dev
 
 # Check code
-bun check
+npm run lint:check
 
 # Fix code
-bun fix
+npm run lint:fix
 
 # Reset everything
-bun clean
-```
-
-## Demo
-
-### Launch
-
-```shell
-# Install dependencies
-bun install:all
-
-# Check code
-bun check
-
-# Launch dev servers
-bun dev
-
-# Open web-app
-open http://localhost:3000/
-```
-
-### Fix bug
-```python
-from fastapi.responses import PlainTextResponse
-@app.get("/", response_class=PlainTextResponse)
+npm run clean
 ```

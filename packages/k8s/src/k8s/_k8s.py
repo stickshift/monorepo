@@ -1,15 +1,16 @@
 """Kubernetes Pulumi resource."""
 import importlib.resources
+
 from pulumi_command.local import Command
 
 __all__ = [
-    "k8s",
+    "kind_cluster",
 ]
 
 
-def k8s(cluster_name: str) -> Command:
+def kind_cluster(cluster_name: str) -> Command:
     package_path = importlib.resources.files(__package__)
-    config_path = package_path.joinpath("cluster.yaml")
+    config_path = package_path.joinpath("kind.yaml")
 
     resource = Command(
         "k8s",

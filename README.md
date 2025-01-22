@@ -22,17 +22,10 @@ Monorepo includes a web app, an api, and a series of containerized components al
 
 ```
 apps/
-  # Kubernetes cluster w/ supporting components
-  platform/  
-  
-  # Backend API (Python)
-  api/
-
-  # Frontend Web App (TypeScript)
-  web-app/
+  platform/  <-- Kubernetes + supporting apps
 
 packages/
-  ...
+  k8s/       <-- Kubernetes artifacts + pulumi resources
 ```
 
 ## Workflow
@@ -45,11 +38,12 @@ npm install
 npm run dev
 
 # Check code
-npm run lint:check
+npm run lint-check
 
 # Fix code
-npm run lint:fix
+npm run lint-fix
 
 # Reset everything
 npm run clean
 ```
+

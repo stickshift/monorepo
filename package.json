@@ -1,14 +1,14 @@
 {
-  "name": "monorepo",
+  "name": "@stickshift/monorepo",
   "version": "0.0.0",
   "private": true,
   
   "scripts": {
     "postinstall": "uv sync",
-    "clean:node": "find . -name node_modules -type d -prune -exec rm -rf {} +",
-    "clean:uv": "find . -name .venv -type d -prune -exec rm -rf {} +",
+    "clean:ts": "find . -name node_modules -type d -prune -exec rm -rf {} +",
+    "clean:python": "find . -name .venv -o -name __pycache__ -type d -prune -exec rm -rf {} +",
     "clean:nx": "find . -name .nx -type d -prune -exec rm -rf {} +",
-    "clean": "npm run clean:node && npm run clean:uv && npm run clean:nx"
+    "clean": "npm run clean:ts && npm run clean:python && npm run clean:nx"
   },
 
   "devDependencies": {

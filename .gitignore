@@ -26,3 +26,4 @@ __pycache__
 .pytest_cache
 vite.config.*.timestamp*
 vitest.config.*.timestamp*
+.eslintcache

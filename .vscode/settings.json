@@ -1,0 +1,7 @@
+{
+    "files.exclude": {
+        "**/.prettierignore": true,
+        "**/.prettierrc": true,
+        "**/.python-version": true
+    }
+}

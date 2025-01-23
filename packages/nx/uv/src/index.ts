@@ -1,1 +1,3 @@
-export * from './dependency-graph';
+import { createDependencies } from './dependency-graph'
+
+export { createDependencies }

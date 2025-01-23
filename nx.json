@@ -16,8 +16,27 @@
       "!{projectRoot}/src/test-setup.[jt]s"
     ]
   },
-  "targetDefaults": {},
+  "targetDefaults": {    
+    "@nx/js:tsc": {
+      "cache": true,
+      "dependsOn": ["^build"],
+      "inputs": ["production", "^production"]
+    },
+
+    "@nx/eslint:lint": {
+      "cache": true,
+      "inputs": [
+        "default",
+        "{workspaceRoot}/.eslintrc.json",
+        "{workspaceRoot}/.eslintignore",
+        "{workspaceRoot}/eslint.config.cjs"
+      ]
+    }
+  },
   "plugins": [
+    {
+      "plugin": "@stickshift/uv"
+    },
     {
       "plugin": "@nx/vite/plugin",
       "options": {

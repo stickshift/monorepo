@@ -3,6 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
+    "postinstall": "uv sync",
     "test": "npx nx run-many -t test",
     "format:check": "npx nx format:check --all",
     "format:fix": "npx nx format:write --all",

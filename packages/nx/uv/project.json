@@ -6,7 +6,6 @@
   "tags": [],
 
   "targets": {
-
     "lint": {
       "executor": "@nx/eslint:lint",
       "configurations": {

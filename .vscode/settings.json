@@ -1,7 +1,10 @@
 {
-    "files.exclude": {
-        "**/.prettierignore": true,
-        "**/.prettierrc": true,
-        "**/.python-version": true
-    }
+  "[typescript]": {
+    "editor.tabSize": 2
+  },
+  "files.exclude": {
+    "**/.prettierignore": true,
+    "**/.prettierrc": true,
+    "**/.python-version": true
+  }
 }

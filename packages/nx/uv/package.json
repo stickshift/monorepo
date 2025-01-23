@@ -8,6 +8,8 @@
   "dependencies": {
     "vite-plugin-dts": "~3.8.1",
     "vite": "^5.0.0",
-    "@nx/vite": "20.3.2"
+    "@nx/vite": "20.3.2",
+    "@nx/devkit": "20.3.2",
+    "@iarna/toml": "^2.2.5"
   }
 }

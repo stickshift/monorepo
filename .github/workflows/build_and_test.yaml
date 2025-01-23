@@ -13,7 +13,7 @@ jobs:
 
       - name: Install Tools
         uses: asdf-vm/actions/install@v3.0.2
-      
+
       - name: Install Dependencies
         run: npm ci
 

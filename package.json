@@ -4,8 +4,8 @@
   "private": true,
   "scripts": {
     "test": "npx nx run-many -t test",
-    "format:check": "npx nx run-many -t format -c check",
-    "format:fix": "npx nx run-many -t format -c fix",
+    "format:check": "npx nx format:check --all",
+    "format:fix": "npx nx format:write --all",
     "lint:check": "npx nx run-many -t lint -c check",
     "lint:fix": "npx nx run-many -t lint -c fix",
     "types:check": "npx nx run-many -t types",
@@ -51,7 +51,8 @@
     "typescript-eslint": "^8.13.0",
     "vite": "^5.0.0",
     "vite-plugin-dts": "~3.8.1",
-    "vitest": "^1.3.1"
+    "vitest": "^1.3.1",
+    "@iarna/toml": "^2.2.5"
   },
   "nx": {
     "includedScripts": []

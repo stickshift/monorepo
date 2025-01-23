@@ -1,9 +1,9 @@
 {
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
-  "name": "k8s",
+  "name": "tools",
   "projectType": "library",
   "metadata": {
-    "description": "Kubernetes utilities & pulumi resources"
+    "description": "General purpose Python tools"
   },
   "targets": {
     "lint": {

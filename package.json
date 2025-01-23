@@ -2,14 +2,16 @@
   "name": "@stickshift/monorepo",
   "version": "0.0.0",
   "private": true,
-  
   "scripts": {
     "postinstall": "uv sync",
+    "lint:check": "npx nx run-many -t lint -c check",
+    "lint:fix": "npx nx run-many -t lint -c fix",
     "clean:ts": "find . -name node_modules -type d -prune -exec rm -rf {} +",
     "clean:python": "find . -name .venv -o -name __pycache__ -type d -prune -exec rm -rf {} +",
     "clean:nx": "find . -name .nx -type d -prune -exec rm -rf {} +",
     "clean": "npm run clean:ts && npm run clean:python && npm run clean:nx"
   },
+  "dependencies": {},
 
   "devDependencies": {
     "@nx/workspace": "^20.3.2",

@@ -34,14 +34,17 @@ packages/
 # Install dependencies
 npm install
 
-# Launch development servers
-npm run dev
+# Launch dev server
+npx nx dev api
+
+# Run e2e tests
+npx nx test e2e
 
 # Check code
-npm run lint-check
+npm run lint:check
 
 # Fix code
-npm run lint-fix
+npm run lint:fix
 
 # Reset everything
 npm run clean

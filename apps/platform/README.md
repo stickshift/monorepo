@@ -1,6 +1,6 @@
-# k8s
+# platform
 
-> Kubernetes cluster
+> Supporting applications deployed in Kubernetes cluster.
 
 ## Workflow
 

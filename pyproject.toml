@@ -10,8 +10,7 @@ requires-python = ">=3.12"
 
 dependencies = [
     "k8s",
-    "pulumi>=3.147.0,<4.0.0",
-    "pulumi-command>=1.0.1",
+    "tools",
 ]
 
 #-------------------------------------------------------------------------------
@@ -21,8 +20,26 @@ dependencies = [
 [tool.uv.workspace]
 
 members = [
+    "apps/api",
+    "apps/platform",
+    "apps/e2e",
     "packages/k8s",
+    "packages/tools",
 ]
 
 [tool.uv.sources]
+
+api = { workspace = true }
 k8s = { workspace = true }
+platform = { workspace = true }
+e2e = { workspace = true }
+tools = { workspace = true }
+
+[dependency-groups]
+dev = [
+    "pytest>=8.3.4",
+    "pytest-asyncio>=0.25.2",
+    "pytest-bdd>=8.1.0",
+    "pytest-xdist>=3.6.1",
+    "ruff>=0.9.2",
+]

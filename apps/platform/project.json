@@ -8,7 +8,7 @@
     "up": {
       "executor": "nx:run-commands",
       "options": {
-        "cwd": "{projectRoot}",
+        "cwd": "{projectRoot}/src",
         "commands": [
           "uv run pulumi stack select dev --create",
           "uv run pulumi up --yes"
@@ -20,10 +20,10 @@
     "down": {
       "executor": "nx:run-commands",
       "options": {
-        "cwd": "{projectRoot}",
+        "cwd": "{projectRoot}/src",
         "commands": [
+          "uv run pulumi stack select dev",
           "uv run pulumi down --yes",
-          "uv run pulumi stack unselect"
         ],
         "parallel": false
       }

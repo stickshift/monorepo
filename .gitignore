@@ -21,3 +21,4 @@ Thumbs.db
 .nx
 *.pyc
 __pycache__
+.ruff_cache

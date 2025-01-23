@@ -1,18 +1,28 @@
-# Python-generated files
-__pycache__/
-*.py[oc]
-build/
-dist/
-wheels/
-*.egg-info
-.mypy_cache/
-.ruff_cache/
+# Compiled output
+build
+dist
+tmp
 
-# Virtual environments
+# Dependencies
+node_modules
 .venv
 
-# JavaScript-generated files
-node_modules/
-.next/
-.turbo/
-tsconfig.tsbuildinfo
+# IDE - VSCode
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+# System Files
+.DS_Store
+Thumbs.db
+
+# Generated files
+.nx
+*.pyc
+__pycache__
+.ruff_cache
+.pytest_cache
+vite.config.*.timestamp*
+vitest.config.*.timestamp*

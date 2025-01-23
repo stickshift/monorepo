@@ -1,0 +1,22 @@
+{
+  "name": "@stickshift/monorepo",
+  "version": "0.0.0",
+  "private": true,
+
+  "scripts": {
+    "clean:ts": "find . -name node_modules -type d -prune -exec rm -rf {} +",
+    "clean:python": "find . -name .venv -o -name __pycache__ -type d -prune -exec rm -rf {} +",
+    "clean:nx": "find . -name .nx -type d -prune -exec rm -rf {} +",
+    "clean": "npm run clean:ts && npm run clean:python && npm run clean:nx"
+  },
+
+  "dependencies": {
+    "@nx/devkit": "20.3.2"
+  },
+
+  "devDependencies": {
+    "@nx/plugin": "^20.3.2",
+    "@nx/workspace": "^20.3.2",
+    "nx": "20.3.2"
+  }
+}

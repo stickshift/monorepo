@@ -5,9 +5,12 @@
   "scripts": {
     "test": "npx nx run-many -t test",
     "format:check": "npx nx run-many -t format -c check",
+    "format:fix": "npx nx run-many -t format -c fix",
     "lint:check": "npx nx run-many -t lint -c check",
     "lint:fix": "npx nx run-many -t lint -c fix",
-    "check": "npm run format:check && npm run lint:check",
+    "types:check": "npx nx run-many -t types",
+    "check": "npm run format:check && npm run lint:check && npm run types:check",
+    "fix": "npm run format:fix && npm run lint:fix",
     "clean:ts": "find . -name node_modules -type d -prune -exec rm -rf {} +",
     "clean:python": "find . -name .venv -o -name __pycache__ -type d -prune -exec rm -rf {} +",
     "clean:nx": "find . -name .nx -type d -prune -exec rm -rf {} +",

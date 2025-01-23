@@ -6,13 +6,13 @@
   "tags": [],
 
   "targets": {
-    "build": {
+    "buildx": {
       "executor": "@nx/js:tsc",
       "outputs": ["{options.outputPath}"],
       "options": {
         "outputPath": "dist/packages/nx/uv",
         "main": "packages/nx/uv/src/index.ts",
-        "tsConfig": "packages/nx/uv/tsconfig.json",
+        "tsConfig": "packages/nx/uv/tsconfig.lib.json",
         "assets": [
           "packages/nx/uv/*.md",
           {

@@ -37,4 +37,3 @@ npm install
 # Reset everything
 npm run clean
 ```
-

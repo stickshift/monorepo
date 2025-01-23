@@ -1,4 +1,5 @@
 """Kubernetes Pulumi resource."""
+
 import importlib.resources
 
 from pulumi_command.local import Command
@@ -19,4 +20,3 @@ def kind_cluster(cluster_name: str) -> Command:
     )
 
     return resource
-

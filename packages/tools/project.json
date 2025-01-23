@@ -4,28 +4,5 @@
   "projectType": "library",
   "metadata": {
     "description": "General purpose Python tools"
-  },
-  "targets": {
-    "lint": {
-      "executor": "nx:run-commands",
-      "options": {
-        "cwd": "{projectRoot}",
-        "parallel": false
-      },
-      "configurations": {
-        "check": {
-          "commands": [
-            "uv run ruff check --config ../../ruff.toml --preview",
-            "uv run ruff format --config ../../ruff.toml --preview --check"
-          ]
-        },
-        "fix": {
-          "commands": [
-            "uv run ruff check --config ../../ruff.toml --preview --fix",
-            "uv run ruff format --config ../../ruff.toml --preview"
-          ]
-        }
-      }
-    }
   }
 } 

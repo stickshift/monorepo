@@ -11,10 +11,12 @@ __all__ = [
 ]
 
 
-async def create_cluster(cluster_name: str) -> Config:
+async def create_cluster(cluster_name: str) -> Config | None:
     config = await get_cluster(cluster_name)
     if config:
         return config
+
+    return None
 
 
 async def get_cluster(cluster_name: str) -> Config | None:

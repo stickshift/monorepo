@@ -1,0 +1,9 @@
+{
+  "executors": {
+    "lint": {
+      "implementation": "./src/executors/lint",
+      "schema": "./src/executors/schema.json",
+      "description": "lint executor"
+    }
+  }
+}

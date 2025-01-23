@@ -23,3 +23,5 @@ Thumbs.db
 __pycache__
 .ruff_cache
 .pytest_cache
+vite.config.*.timestamp*
+vitest.config.*.timestamp*

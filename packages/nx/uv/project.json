@@ -6,40 +6,19 @@
   "tags": [],
 
   "targets": {
-    "buildx": {
-      "executor": "@nx/js:tsc",
-      "outputs": ["{options.outputPath}"],
-      "options": {
-        "outputPath": "dist/packages/nx/uv",
-        "main": "packages/nx/uv/src/index.ts",
-        "tsConfig": "packages/nx/uv/tsconfig.lib.json",
-        "assets": [
-          "packages/nx/uv/*.md",
-          {
-            "input": "./packages/nx/uv/src",
-            "glob": "**/!(*.ts)",
-            "output": "./src"
-          },
-          {
-            "input": "./packages/nx/uv/src",
-            "glob": "**/*.d.ts",
-            "output": "./src"
-          },
-          {
-            "input": "./packages/nx/uv",
-            "glob": "generators.json",
-            "output": "."
-          },
-          {
-            "input": "./packages/nx/uv",
-            "glob": "executors.json",
-            "output": "."
-          }
-        ]
-      }
-    },
+
     "lint": {
-      "executor": "@nx/eslint:lint"
+      "executor": "@nx/eslint:lint",
+      "configurations": {
+        "check": {
+          "fix": false,
+          "cache": true
+        },
+        "fix": {
+          "fix": true,
+          "cache": true
+        }
+      }
     }
   }
 }

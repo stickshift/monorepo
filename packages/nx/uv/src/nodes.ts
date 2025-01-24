@@ -35,8 +35,13 @@ async function createNodesInternal(
   const projectRoot = dirname(configFilePath)
   const pyproject = await getPyProject(configFilePath)
 
-  // Verify pyproject.toml exists
+  // Skip if pyproject.toml doesn'y exist
   if (!pyproject) {
+    return {}
+  }
+
+  // Skip if pyproject.toml doesn't have a build-backend
+  if (!("build-backend" in pyproject["build-system"])) {
     return {}
   }
 

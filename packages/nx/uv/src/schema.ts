@@ -11,6 +11,10 @@ export const PyProjectSchema = z.object({
     dependencies: z.array(z.string()).optional().default([]),
   }),
 
+  "build-system": z.object({
+    "build-backend": z.string().optional(),
+  }).optional().default({}),
+
   tool: z
     .object({
       uv: z

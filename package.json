@@ -16,6 +16,7 @@
     "check": "npm run format:check && npm run lint:check && npm run typecheck",
     "fix": "npm run format:fix && npm run lint:fix",
     "build": "npx nx run-many -t build",
+    "test": "npx nx run-many -t test",
     "clean:cache:py": "find . -name __pycache__ -type d -prune -exec rm -rf {} +",
     "clean:cache": "npm run clean:cache:py",
     "clean:deps": "rm -rf node_modules .venv",

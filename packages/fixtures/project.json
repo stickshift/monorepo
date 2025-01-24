@@ -1,0 +1,8 @@
+{
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "name": "fixtures",
+  "projectType": "library",
+  "metadata": {
+    "description": "Reusable pytest fixtures."
+  }
+}

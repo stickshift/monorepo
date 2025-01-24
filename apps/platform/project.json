@@ -1,0 +1,32 @@
+{
+    "$schema": "../../node_modules/nx/schemas/project-schema.json",
+    "name": "platform",
+    "projectType": "application",
+    
+    "targets": {
+  
+      "up": {
+        "executor": "nx:run-commands",
+        "options": {
+          "cwd": "{projectRoot}/src",
+          "commands": [
+            "uv run pulumi stack select dev --create",
+            "uv run pulumi up --yes"
+          ],
+          "parallel": false
+        }
+      },
+  
+      "down": {
+        "executor": "nx:run-commands",
+        "options": {
+          "cwd": "{projectRoot}/src",
+          "commands": [
+            "uv run pulumi stack select dev",
+            "uv run pulumi down --yes",
+          ],
+          "parallel": false
+        }
+      }
+    }
+  } 

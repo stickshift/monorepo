@@ -1,11 +1,15 @@
-from collections.abc import Callable
+from collections.abc import Callable, Mapping
 import random
 import secrets
 import string
 from typing import cast
 
+from anyio import Path
+from dotenv import dotenv_values
+
 __all__ = [
     "default_arg",
+    "merge_dotenv",
     "random_string",
 ]
 
@@ -39,3 +43,22 @@ def random_string(length: int | None = None):
 
     # Always prefix with a character to ensure value is a string
     return random.choice(string.ascii_lowercase) + secrets.token_hex(int(length / 2))[1:]
+
+
+async def merge_dotenv(path: Path, updates: Mapping[str, str]):
+    # Validate
+    if await path.exists() and not await path.is_file():
+        raise ValueError(f"Invalid .env path {path}")
+
+    data = {}
+    if await path.exists():
+        data = dotenv_values(path)
+
+    data.update(updates)
+
+    lines = []
+    for k, v in data.items():
+        lines.append(f"{k}={v}")
+
+    content = "\n".join(lines) + "\n"
+    await path.write_text(content)

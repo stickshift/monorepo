@@ -9,6 +9,8 @@ version = "0.0.0"
 requires-python = ">=3.12"
 
 dependencies = [
+    "platform",
+    "fixtures",
     "k8s",
     "tools",
 ]
@@ -20,12 +22,16 @@ dependencies = [
 [tool.uv.workspace]
 
 members = [
+    "apps/platform",
+    "packages/fixtures",
     "packages/k8s",
     "packages/tools",
 ]
 
 [tool.uv.sources]
 
+platform = { workspace = true }
+fixtures = { workspace = true }
 k8s = { workspace = true }
 tools = { workspace = true }
 

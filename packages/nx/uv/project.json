@@ -8,6 +8,9 @@
   "targets": {
     "lint": {
       "executor": "@nx/eslint:lint",
+      "options": {
+        "maxWarnings": 0
+      },
       "configurations": {
         "check": {
           "fix": false,
@@ -15,7 +18,7 @@
         },
         "fix": {
           "fix": true,
-          "cache": true
+          "cache": false
         }
       }
     }

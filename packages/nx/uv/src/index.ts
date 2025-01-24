@@ -1,3 +1,4 @@
-import { createDependencies } from './dependency-graph'
+import { createDependencies } from "./dependencies/dependency-graph"
+import { createNodesV2 } from "./tasks/tasks"
 
-export { createDependencies }
+export { createDependencies, createNodesV2 }

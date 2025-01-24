@@ -12,6 +12,9 @@
     "vite": "^5.0.0",
     "@nx/vite": "20.3.2",
     "@nx/devkit": "20.3.2",
-    "@iarna/toml": "^2.2.5"
+    "@iarna/toml": "^2.2.5",
+    "chalk": "4.1.2",
+    "cross-spawn": "7.0.6",
+    "command-exists": "^1.2.9"
   }
 }

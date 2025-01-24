@@ -15,10 +15,10 @@ jobs:
         uses: actions/checkout@v4.2.2
         with:
           fetch-depth: 0
-      
+
       - name: Install asdf
         uses: asdf-vm/actions/setup@v3.0.2
-      
+
       - name: Cache asdf
         id: cache
         uses: actions/cache@v4.2.0
@@ -28,10 +28,10 @@ jobs:
 
       - name: Install Tools (cache miss)
         if: steps.cache.outputs.cache-hit != 'true'
-        uses: asdf-vm/actions/install@v3.0.2      
-      
+        uses: asdf-vm/actions/install@v3.0.2
+
       - name: Install Dependencies
-        run: npm i      
-      
+        run: npm i
+
       - name: Check code
         run: npm run check

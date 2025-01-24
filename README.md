@@ -34,6 +34,9 @@ packages/
 # Install dependencies
 npm install
 
+# Build artifacts
+npm run build
+
 # Reset everything
 npm run clean
 ```

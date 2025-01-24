@@ -3,19 +3,35 @@ on:
   pull_request:
     branches:
       - main
+env:
+  NX_BASE: ${{ github.event.pull_request.base.sha }}
+  NX_HEAD: ${{ github.event.pull_request.head.sha }}
 jobs:
   build:
     name: Build and Test
     runs-on: ubuntu-24.04
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
-      
-      - name: Install Tools
-        uses: asdf-vm/actions/install@v3.0.2      
-      
+        uses: actions/checkout@v4.2.2
+        with:
+          fetch-depth: 0
+
+      - name: Install asdf
+        uses: asdf-vm/actions/setup@v3.0.2
+
+      - name: Cache asdf
+        id: cache
+        uses: actions/cache@v4.2.0
+        with:
+          path: ~/.asdf
+          key: asdf-${{ hashFiles('**/.tool-versions') }}
+
+      - name: Install Tools (cache miss)
+        if: steps.cache.outputs.cache-hit != 'true'
+        uses: asdf-vm/actions/install@v3.0.2
+
       - name: Install Dependencies
-        run: npm i      
-      
+        run: npm i
+
       - name: Check code
         run: npm run check

@@ -3,12 +3,20 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
-    "build": "npx nx run-many -t build",
     "format:check": "npx nx format:check",
     "format:fix": "npx nx format",
     "lint:check": "npx nx run-many -t lint -c check",
     "lint:fix": "npx nx run-many -t lint -c fix",
-    "typecheck": "npx nx run-many -t typecheck"
+    "typecheck": "npx nx run-many -t typecheck",
+    "check": "npm run format:check && npm run lint:check && npm run typecheck",
+    "fix": "npm run format:fix && npm run lint:fix",
+    "build": "npx nx run-many -t build",
+    "clean:cache:py": "find . -name __pycache__ -type d -prune -exec rm -rf {} +",
+    "clean:cache": "npm run clean:cache:py",
+    "clean:deps": "rm -rf node_modules .venv",
+    "clean:output": "rm -rf build dist tmp",
+    "clean:nx": "rm -rf .nx",
+    "clean": "npm run clean:cache && npm run clean:deps && npm run clean:output && npm run clean:nx"
   },
   "private": true,
   "devDependencies": {

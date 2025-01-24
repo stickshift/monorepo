@@ -6,8 +6,52 @@
       "sharedGlobals"
     ],
     "production": [
-      "default"
+      "default",
+      "!{projectRoot}/.eslintrc.json",
+      "!{projectRoot}/eslint.config.cjs"
     ],
     "sharedGlobals": []
-  }
+  },
+  "targetDefaults": {
+    "@nx/js:tsc": {
+      "cache": true,
+      "dependsOn": [
+        "^build"
+      ],
+      "inputs": [
+        "production",
+        "^production"
+      ]
+    },
+    "@nx/eslint:lint": {
+      "cache": true,
+      "inputs": [
+        "default",
+        "{workspaceRoot}/.eslintrc.json",
+        "{workspaceRoot}/.eslintignore",
+        "{workspaceRoot}/eslint.config.cjs"
+      ],
+      "options": {
+        "maxWarnings": 0
+      },
+      "configurations": {
+        "check": {
+          "fix": false,
+          "cache": true
+        },
+        "fix": {
+          "fix": true,
+          "cache": false
+        }
+      }
+    }
+  },
+  "plugins": [
+    {
+      "plugin": "@nx/js/typescript",
+      "options": {
+        "typecheck": true
+      }
+    }
+  ]
 }

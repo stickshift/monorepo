@@ -1,0 +1,44 @@
+{
+  "name": "mypy",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "packages/nx/mypy/src",
+  "projectType": "library",
+  "tags": [],
+  "targets": {
+    "build": {
+      "executor": "@nx/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/packages/nx/mypy",
+        "main": "packages/nx/mypy/src/index.ts",
+        "tsConfig": "packages/nx/mypy/tsconfig.lib.json",
+        "assets": [
+          "packages/nx/mypy/*.md",
+          {
+            "input": "./packages/nx/mypy/src",
+            "glob": "**/!(*.ts)",
+            "output": "./src"
+          },
+          {
+            "input": "./packages/nx/mypy/src",
+            "glob": "**/*.d.ts",
+            "output": "./src"
+          },
+          {
+            "input": "./packages/nx/mypy",
+            "glob": "generators.json",
+            "output": "."
+          },
+          {
+            "input": "./packages/nx/mypy",
+            "glob": "executors.json",
+            "output": "."
+          }
+        ]
+      }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint"
+    }
+  }
+}

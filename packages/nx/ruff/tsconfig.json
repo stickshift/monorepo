@@ -1,11 +1,16 @@
 {
   "extends": "../../../tsconfig.base.json",
   "compilerOptions": {
-    "module": "commonjs"
+    "module": "commonjs",
+    "declaration": true,
+    "composite": true
   },
   "files": [],
   "include": [],
   "references": [
+    {
+      "path": "../uv"
+    },
     {
       "path": "./tsconfig.lib.json"
     }

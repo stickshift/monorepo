@@ -15,9 +15,9 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@monorepo/mypy": ["packages/nx/mypy/src/index.ts"],
-      "@monorepo/ruff": ["packages/nx/ruff/src/index.ts"],
-      "@monorepo/uv": ["packages/nx/uv/src/index.ts"]
+      "@stickshift/mypy": ["packages/nx/mypy/src/index.ts"],
+      "@stickshift/ruff": ["packages/nx/ruff/src/index.ts"],
+      "@stickshift/uv": ["packages/nx/uv/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

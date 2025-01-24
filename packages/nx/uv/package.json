@@ -1,11 +1,16 @@
 {
-  "name": "@monorepo/uv",
-  "version": "0.0.1",
+  "name": "@stickshift/uv",
+  "version": "0.0.0",
   "private": true,
   "type": "commonjs",
   "main": "./src/index.js",
   "types": "./src/index.d.ts",
   "dependencies": {
-    "tslib": "^2.3.0"
-  }
+    "@nx/devkit": "20.3.3",
+    "tslib": "^2.3.0",
+    "@iarna/toml": "^2.2.5",
+    "zod": "^3.24.1",
+    "chalk-template": "^1.1.0"
+  },
+  "executors": "./executors.json"
 }

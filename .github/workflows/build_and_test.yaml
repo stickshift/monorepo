@@ -1,0 +1,21 @@
+name: Build and Test PRs
+on:
+  pull_request:
+    branches:
+      - main
+jobs:
+  build:
+    name: Build and Test
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      
+      - name: Install Tools
+        uses: asdf-vm/actions/install@v3.0.2      
+      
+      - name: Install Dependencies
+        run: npm i      
+      
+      - name: Check code
+        run: npm run check

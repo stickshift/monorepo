@@ -1,0 +1,14 @@
+{
+  "executors": {
+    "format": {
+      "implementation": "./src/executors/format",
+      "schema": "./src/executors/format.schema.json",
+      "description": "format executor"
+    },
+    "lint": {
+      "implementation": "./src/executors/lint",
+      "schema": "./src/executors/lint.schema.json",
+      "description": "lint executor"
+    }
+  }
+}

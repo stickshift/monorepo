@@ -1,10 +1,15 @@
 {
-  "name": "@monorepo/source",
+  "name": "@stickshift/source",
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
-    "format:check": "npx nx format:check",
-    "format:fix": "npx nx format",
+    "postinstall": "uv sync",
+    "format:check:ts": "npx nx format:check",
+    "format:fix:ts": "npx nx format",
+    "format:check:py": "npx nx run-many -t format -c check",
+    "format:fix:py": "npx nx run-many -t format -c fix",
+    "format:check": "npm run format:check:ts && npm run format:check:py",
+    "format:fix": "npm run format:fix:ts && npm run format:fix:py",
     "lint:check": "npx nx run-many -t lint -c check",
     "lint:fix": "npx nx run-many -t lint -c fix",
     "typecheck": "npx nx run-many -t typecheck",
@@ -21,6 +26,7 @@
   "private": true,
   "devDependencies": {
     "@eslint/js": "^9.8.0",
+    "@iarna/toml": "^2.2.5",
     "@nx/eslint": "20.3.3",
     "@nx/eslint-plugin": "20.3.3",
     "@nx/jest": "20.3.3",
@@ -38,9 +44,11 @@
     "prettier": "^2.6.2",
     "tslib": "^2.3.0",
     "typescript": "~5.6.2",
-    "typescript-eslint": "^8.13.0"
+    "typescript-eslint": "^8.13.0",
+    "zod": "^3.24.1"
   },
   "dependencies": {
-    "@nx/devkit": "20.3.3"
+    "@nx/devkit": "20.3.3",
+    "chalk-template": "^1.1.0"
   }
 }

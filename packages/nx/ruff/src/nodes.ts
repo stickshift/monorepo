@@ -62,9 +62,11 @@ async function createNodesInternal(
       configurations: {
         check: {
           fix: false,
+          preview: true,
         },
         fix: {
           fix: true,
+          preview: true,
         },
       },
       inputs: ["default"],

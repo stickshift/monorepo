@@ -10,11 +10,11 @@ const runExecutor: PromiseExecutor<LintExecutorSchema> = async (
 
   const args = ["run", "ruff", "check"]
 
-  if (options?.fix ?? false) {
+  if (options.fix) {
     args.push("--fix")
   }
 
-  if (options?.preview ?? true) {
+  if (options.preview) {
     args.push("--preview")
   }
 

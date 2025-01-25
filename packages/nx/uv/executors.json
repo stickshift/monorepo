@@ -2,8 +2,13 @@
   "executors": {
     "build": {
       "implementation": "./src/executors/build",
-      "schema": "./src/executors/schema.json",
+      "schema": "./src/executors/build.schema.json",
       "description": "build executor"
+    },
+    "test": {
+      "implementation": "./src/executors/test",
+      "schema": "./src/executors/test.schema.json",
+      "description": "test executor"
     }
   }
 }

@@ -1,9 +1,9 @@
 export interface FormatExecutorSchema {
-  fix: boolean | undefined
-  preview: boolean | undefined
+  fix: boolean
+  preview: boolean
 }
 
 export interface LintExecutorSchema {
-  fix: boolean | undefined
-  preview: boolean | undefined
+  fix: boolean
+  preview: boolean
 }

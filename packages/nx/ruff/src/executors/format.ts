@@ -10,11 +10,11 @@ const runExecutor: PromiseExecutor<FormatExecutorSchema> = async (
 
   const args = ["run", "ruff", "format"]
 
-  if (!(options?.fix ?? false)) {
+  if (!options.fix) {
     args.push("--check")
   }
 
-  if (options?.preview ?? true) {
+  if (options.preview) {
     args.push("--preview")
   }
 

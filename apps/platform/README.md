@@ -6,8 +6,11 @@
 
 ```sh
 # Deploy cluster
-npx nx up platform
+npx nx run platform:up
+
+# Check status
+npx nx run platform:status
 
 # Destroy cluster
-npx nx down platform
+npx nx run platform:down
 ```

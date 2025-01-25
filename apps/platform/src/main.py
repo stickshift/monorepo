@@ -1,7 +1,8 @@
 """Pulumi entrypoint."""
 
-from k8s.pulumi import kind
 from pulumi import Output
+
+from k8s.pulumi import kind
 
 k8s = kind.cluster("monorepo")
 

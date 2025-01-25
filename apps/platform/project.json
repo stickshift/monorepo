@@ -4,7 +4,6 @@
   "projectType": "application",
 
   "targets": {
-
     "up": {
       "executor": "nx:run-commands",
       "options": {
@@ -21,10 +20,7 @@
       "executor": "nx:run-commands",
       "options": {
         "cwd": "{projectRoot}/src",
-        "commands": [
-          "uv run pulumi stack select dev",
-          "uv run pulumi stack"
-        ],
+        "commands": ["uv run pulumi stack select dev", "uv run pulumi stack"],
         "parallel": false
       }
     },

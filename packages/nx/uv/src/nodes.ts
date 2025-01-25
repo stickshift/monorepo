@@ -105,7 +105,11 @@ const getTestTargets = (
     },
   }
 
-  const targetName = options?.testTargetName ?? "test"
+  let targetName = options?.testTargetName ?? "test"
+
+  if (pyproject.project.name == "e2e") {
+    targetName = options?.e2eTestTargetName ?? "e2e"
+  }
 
   return { [targetName]: target }
 }

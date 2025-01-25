@@ -10,6 +10,7 @@ requires-python = ">=3.12"
 
 dependencies = [
     "platform",
+    "e2e",
     "fixtures",
     "k8s",
     "tools",
@@ -23,6 +24,7 @@ dependencies = [
 
 members = [
     "apps/platform",
+    "apps/e2e",
     "packages/fixtures",
     "packages/k8s",
     "packages/tools",
@@ -31,6 +33,7 @@ members = [
 [tool.uv.sources]
 
 platform = { workspace = true }
+e2e = { workspace = true }
 fixtures = { workspace = true }
 k8s = { workspace = true }
 tools = { workspace = true }

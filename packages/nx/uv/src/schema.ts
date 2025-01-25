@@ -3,6 +3,7 @@ import { z } from "zod"
 export interface PluginOptions {
   buildTargetName?: string
   testTargetName?: string
+  e2eTestTargetName?: string
 }
 
 export const PyProjectSchema = z.object({

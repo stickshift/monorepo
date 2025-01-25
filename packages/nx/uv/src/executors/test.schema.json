@@ -1,0 +1,14 @@
+{
+  "$schema": "https://json-schema.org/schema",
+  "version": 2,
+  "title": "Test executor",
+  "description": "",
+  "type": "object",
+  "properties": {
+    "n": {
+      "type": "integer",
+      "description": "Number of workers to run in parallel"
+    }
+  },
+  "required": ["n"]
+}

@@ -7,8 +7,9 @@ import {
 import { readdir } from "node:fs/promises"
 import { dirname } from "path"
 
-import { PluginOptions } from "./schema"
+import { PluginOptions, PyProject } from "./schema"
 import { getPyProject } from "./tools"
+import { BuildExecutorSchema, TestExecutorSchema } from "./executors/schema"
 
 // Identify all the configuration files for this plugin
 const pythonConfigGlob = "**/pyproject.toml"
@@ -28,26 +29,46 @@ export const createNodesV2: CreateNodesV2<PluginOptions> = [
   },
 ]
 
-async function createNodesInternal(
+const createNodesInternal = async (
   configFilePath: string,
   options: PluginOptions | undefined
-) {
+) => {
   const projectRoot = dirname(configFilePath)
+  const files = await readdir(projectRoot)
+
+  // Skip if project is missing key config files
+  const required = ["pyproject.toml", "project.json"]
+  for (const f of required) {
+    if (!files.includes(f)) {
+      return {}
+    }
+  }
+
   const pyproject = await getPyProject(configFilePath)
 
-  // Verify pyproject.toml exists
-  if (!pyproject) {
+  const buildTargets = getBuildTargets(pyproject, options)
+  const testTargets = getTestTargets(pyproject, options, files)
+  const targets = { ...buildTargets, ...testTargets }
+
+  return {
+    projects: {
+      [projectRoot]: {
+        targets: targets,
+      },
+    },
+  }
+}
+
+const getBuildTargets = (
+  pyproject: PyProject,
+  options: PluginOptions | undefined
+) => {
+  // Skip if pyproject.toml doesn't have a build-backend
+  if (!("build-backend" in pyproject["build-system"])) {
     return {}
   }
 
-  // Verify project.json exists
-  const siblingFiles = await readdir(projectRoot)
-  if (!siblingFiles.includes("project.json")) {
-    return {}
-  }
-
-  // Inferred task final output
-  const buildTarget: TargetConfiguration = {
+  const target: TargetConfiguration<BuildExecutorSchema> = {
     executor: "@stickshift/uv:build",
     cache: true,
     dependsOn: ["^build"],
@@ -55,16 +76,40 @@ async function createNodesInternal(
     outputs: [`{workspaceRoot}/dist/${pyproject.project.name}-*`],
   }
 
-  // Project configuration to be merged into the rest of the Nx configuration
-  const buildTargetName = options?.buildTargetName ?? "build"
+  const targetName = options?.buildTargetName ?? "build"
 
-  return {
-    projects: {
-      [projectRoot]: {
-        targets: {
-          [buildTargetName]: buildTarget,
-        },
-      },
+  return { [targetName]: target }
+}
+
+const getTestTargets = (
+  pyproject: PyProject,
+  options: PluginOptions | undefined,
+  files: string[]
+) => {
+  // Skip if projectRoot doesn't have `tests` directory
+  if (!files.includes("tests")) {
+    return {}
+  }
+  // Skip if projectRoot doesn't have `conftest.py` directory
+  if (!files.includes("conftest.py")) {
+    return {}
+  }
+
+  const target: TargetConfiguration<TestExecutorSchema> = {
+    executor: "@stickshift/uv:test",
+    cache: true,
+    dependsOn: [],
+    inputs: ["default"],
+    options: {
+      n: 1,
     },
   }
+
+  let targetName = options?.testTargetName ?? "test"
+
+  if (pyproject.project.name == "e2e") {
+    targetName = options?.e2eTestTargetName ?? "e2e"
+  }
+
+  return { [targetName]: target }
 }

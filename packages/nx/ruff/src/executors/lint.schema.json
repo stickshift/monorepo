@@ -7,14 +7,12 @@
   "properties": {
     "fix": {
       "type": "boolean",
-      "description": "Whether to automatically fix lint issues where possible",
-      "default": false
+      "description": "Whether to automatically fix issues where possible"
     },
     "preview": {
       "type": "boolean",
-      "description": "Whether to enable ruff's preview mode",
-      "default": true
+      "description": "Whether to enable ruff's preview mode"
     }
   },
-  "required": []
+  "required": ["fix", "preview"]
 }
